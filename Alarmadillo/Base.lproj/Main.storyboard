@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--View Controller-->
         <scene sceneID="aGk-Jr-jZa">
             <objects>
-                <tableViewController id="KfY-2a-bTv" sceneMemberID="viewController">
+                <tableViewController id="KfY-2a-bTv" customClass="ViewController" customModule="Alarmadillo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="3ds-Al-0RG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="932" y="76.911544227886068"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Group View Controller-->
         <scene sceneID="pv3-fV-s5d">
             <objects>
-                <tableViewController id="lBY-h1-aEU" sceneMemberID="viewController">
+                <tableViewController id="lBY-h1-aEU" customClass="GroupViewController" customModule="Alarmadillo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="0A4-XA-IhE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,6 +78,9 @@
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="lBY-h1-aEU" id="eXq-QN-mxK"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -102,6 +105,9 @@
                                         </label>
                                         <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u60-cn-xAs">
                                             <rect key="frame" x="326" y="6.5" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="switchChanged:" destination="lBY-h1-aEU" eventType="valueChanged" id="Stv-L4-vOj"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                     <constraints>
@@ -149,12 +155,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiG-1l-MR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1700" y="77"/>
+            <point key="canvasLocation" x="1687" y="77"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Alarm View Controller-->
         <scene sceneID="MVT-re-89z">
             <objects>
-                <tableViewController id="pfN-6S-LCw" sceneMemberID="viewController">
+                <tableViewController id="pfN-6S-LCw" customClass="AlarmViewController" customModule="Alarmadillo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="g0b-92-3MX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,6 +180,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="pfN-6S-LCw" id="3Td-W8-gcS"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -195,6 +204,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="pfN-6S-LCw" id="Mbn-GD-cDH"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -224,6 +236,9 @@
                                                             <date key="date" timeIntervalSinceReferenceDate="575331722.46896994">
                                                                 <!--2019-03-26 22:22:02 +0000-->
                                                             </date>
+                                                            <connections>
+                                                                <action selector="datePickerChanged:" destination="pfN-6S-LCw" eventType="valueChanged" id="Jnw-DN-v6R"/>
+                                                            </connections>
                                                         </datePicker>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -280,9 +295,20 @@
                             <outlet property="delegate" destination="pfN-6S-LCw" id="l4A-HY-ke2"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="caption" destination="prl-ni-P3X" id="Cko-p8-FE1"/>
+                        <outlet property="datePicker" destination="SnO-Tp-zu9" id="Nf0-BD-jOH"/>
+                        <outlet property="imageView" destination="Lhv-ow-XAY" id="re4-Td-OSd"/>
+                        <outlet property="name" destination="PlB-UE-hX1" id="RPS-xr-f5w"/>
+                        <outlet property="tapToSelectImage" destination="bZC-9r-ehx" id="jM8-rl-bKb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kM-X8-eSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="hVw-qp-gxw"/>
+                <tapGestureRecognizer id="hVw-qp-gxw">
+                    <connections>
+                        <action selector="imageViewTapped:" destination="pfN-6S-LCw" id="r3K-90-exe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2439" y="77"/>
         </scene>

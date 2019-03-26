@@ -12,6 +12,8 @@
 		7B4C5A3E224AC7F700E32C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4C5A3C224AC7F700E32C8C /* Main.storyboard */; };
 		7B4C5A40224AC7F800E32C8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B4C5A3F224AC7F800E32C8C /* Assets.xcassets */; };
 		7B4C5A43224AC7F800E32C8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4C5A41224AC7F800E32C8C /* LaunchScreen.storyboard */; };
+		7B4C5A4B224AE60A00E32C8C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C5A4A224AE60A00E32C8C /* GroupViewController.swift */; };
+		7B4C5A4D224AE63E00E32C8C /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C5A4C224AE63E00E32C8C /* AlarmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		7B4C5A3F224AC7F800E32C8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B4C5A42224AC7F800E32C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B4C5A44224AC7F800E32C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B4C5A4A224AE60A00E32C8C /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		7B4C5A4C224AE63E00E32C8C /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				7B4C5A38224AC7F700E32C8C /* AppDelegate.swift */,
 				7B4C5A3A224AC7F700E32C8C /* ViewController.swift */,
 				7B4C5A3C224AC7F700E32C8C /* Main.storyboard */,
+				7B4C5A4A224AE60A00E32C8C /* GroupViewController.swift */,
+				7B4C5A4C224AE63E00E32C8C /* AlarmViewController.swift */,
 				7B4C5A3F224AC7F800E32C8C /* Assets.xcassets */,
 				7B4C5A41224AC7F800E32C8C /* LaunchScreen.storyboard */,
 				7B4C5A44224AC7F800E32C8C /* Info.plist */,
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B4C5A4D224AE63E00E32C8C /* AlarmViewController.swift in Sources */,
+				7B4C5A4B224AE60A00E32C8C /* GroupViewController.swift in Sources */,
 				7B4C5A3B224AC7F700E32C8C /* ViewController.swift in Sources */,
 				7B4C5A39224AC7F700E32C8C /* AppDelegate.swift in Sources */,
 			);
