@@ -74,7 +74,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name this group" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2n9-wj-Jy2">
-                                            <rect key="frame" x="0.0" y="11.5" width="375" height="21"/>
+                                            <rect key="frame" x="16" y="11.5" width="343" height="21"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -85,8 +85,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="2n9-wj-Jy2" firstAttribute="centerY" secondItem="1NX-O6-WI1" secondAttribute="centerY" id="7BF-GH-fQH"/>
-                                        <constraint firstItem="2n9-wj-Jy2" firstAttribute="leading" secondItem="1NX-O6-WI1" secondAttribute="leading" id="Zji-0E-vcK"/>
-                                        <constraint firstAttribute="trailing" secondItem="2n9-wj-Jy2" secondAttribute="trailing" id="r1g-Sj-jJx"/>
+                                        <constraint firstItem="2n9-wj-Jy2" firstAttribute="leading" secondItem="1NX-O6-WI1" secondAttribute="leading" constant="16" id="Zji-0E-vcK"/>
+                                        <constraint firstAttribute="trailing" secondItem="2n9-wj-Jy2" secondAttribute="trailing" constant="16" id="r1g-Sj-jJx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -98,13 +98,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeK-7I-Hed">
-                                            <rect key="frame" x="0.0" y="11.5" width="42" height="21"/>
+                                            <rect key="frame" x="16" y="11.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u60-cn-xAs">
-                                            <rect key="frame" x="326" y="6.5" width="51" height="31"/>
+                                            <rect key="frame" x="306" y="6.5" width="51" height="31"/>
                                             <connections>
                                                 <action selector="switchChanged:" destination="lBY-h1-aEU" eventType="valueChanged" id="Stv-L4-vOj"/>
                                             </connections>
@@ -113,9 +113,9 @@
                                     <constraints>
                                         <constraint firstItem="MeK-7I-Hed" firstAttribute="centerY" secondItem="NON-Db-cF6" secondAttribute="centerY" id="9vv-2J-gFm"/>
                                         <constraint firstItem="u60-cn-xAs" firstAttribute="centerY" secondItem="NON-Db-cF6" secondAttribute="centerY" id="A10-4Z-Eik"/>
-                                        <constraint firstItem="MeK-7I-Hed" firstAttribute="leading" secondItem="NON-Db-cF6" secondAttribute="leading" id="Muy-aV-XFb"/>
+                                        <constraint firstItem="MeK-7I-Hed" firstAttribute="leading" secondItem="NON-Db-cF6" secondAttribute="leading" constant="16" id="Muy-aV-XFb"/>
                                         <constraint firstItem="u60-cn-xAs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MeK-7I-Hed" secondAttribute="trailing" constant="10" id="Nvv-Wd-8Z0"/>
-                                        <constraint firstAttribute="trailing" secondItem="u60-cn-xAs" secondAttribute="trailing" id="c3O-LK-rs2"/>
+                                        <constraint firstAttribute="trailing" secondItem="u60-cn-xAs" secondAttribute="trailing" constant="20" id="c3O-LK-rs2"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
