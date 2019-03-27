@@ -16,6 +16,8 @@ class AlarmViewController: UITableViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var tapToSelectImage: UILabel!
     
+    var alarm: Alarm!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

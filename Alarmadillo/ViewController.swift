@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UITableViewController {
 
+    var groups = [Group]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

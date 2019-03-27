@@ -14,6 +14,8 @@
 		7B4C5A43224AC7F800E32C8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4C5A41224AC7F800E32C8C /* LaunchScreen.storyboard */; };
 		7B4C5A4B224AE60A00E32C8C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C5A4A224AE60A00E32C8C /* GroupViewController.swift */; };
 		7B4C5A4D224AE63E00E32C8C /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C5A4C224AE63E00E32C8C /* AlarmViewController.swift */; };
+		7B4C5A4F224AEFED00E32C8C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C5A4E224AEFED00E32C8C /* Group.swift */; };
+		7B4C5A51224AEFFD00E32C8C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C5A50224AEFFD00E32C8C /* Alarm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		7B4C5A44224AC7F800E32C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B4C5A4A224AE60A00E32C8C /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		7B4C5A4C224AE63E00E32C8C /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		7B4C5A4E224AEFED00E32C8C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		7B4C5A50224AEFFD00E32C8C /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 				7B4C5A38224AC7F700E32C8C /* AppDelegate.swift */,
 				7B4C5A3A224AC7F700E32C8C /* ViewController.swift */,
 				7B4C5A3C224AC7F700E32C8C /* Main.storyboard */,
+				7B4C5A52224AF4D600E32C8C /* Model */,
 				7B4C5A4A224AE60A00E32C8C /* GroupViewController.swift */,
 				7B4C5A4C224AE63E00E32C8C /* AlarmViewController.swift */,
 				7B4C5A3F224AC7F800E32C8C /* Assets.xcassets */,
@@ -68,6 +73,15 @@
 				7B4C5A44224AC7F800E32C8C /* Info.plist */,
 			);
 			path = Alarmadillo;
+			sourceTree = "<group>";
+		};
+		7B4C5A52224AF4D600E32C8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B4C5A4E224AEFED00E32C8C /* Group.swift */,
+				7B4C5A50224AEFFD00E32C8C /* Alarm.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +158,9 @@
 				7B4C5A4D224AE63E00E32C8C /* AlarmViewController.swift in Sources */,
 				7B4C5A4B224AE60A00E32C8C /* GroupViewController.swift in Sources */,
 				7B4C5A3B224AC7F700E32C8C /* ViewController.swift in Sources */,
+				7B4C5A4F224AEFED00E32C8C /* Group.swift in Sources */,
 				7B4C5A39224AC7F700E32C8C /* AppDelegate.swift in Sources */,
+				7B4C5A51224AEFFD00E32C8C /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
