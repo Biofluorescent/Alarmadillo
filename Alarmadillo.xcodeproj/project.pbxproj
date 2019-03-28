@@ -16,6 +16,7 @@
 		7B4C5A4D224AE63E00E32C8C /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C5A4C224AE63E00E32C8C /* AlarmViewController.swift */; };
 		7B4C5A4F224AEFED00E32C8C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C5A4E224AEFED00E32C8C /* Group.swift */; };
 		7B4C5A51224AEFFD00E32C8C /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C5A50224AEFFD00E32C8C /* Alarm.swift */; };
+		7B4C5A54224C3C4400E32C8C /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C5A53224C3C4400E32C8C /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7B4C5A4C224AE63E00E32C8C /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		7B4C5A4E224AEFED00E32C8C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		7B4C5A50224AEFFD00E32C8C /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		7B4C5A53224C3C4400E32C8C /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				7B4C5A52224AF4D600E32C8C /* Model */,
 				7B4C5A4A224AE60A00E32C8C /* GroupViewController.swift */,
 				7B4C5A4C224AE63E00E32C8C /* AlarmViewController.swift */,
+				7B4C5A53224C3C4400E32C8C /* Helper.swift */,
 				7B4C5A3F224AC7F800E32C8C /* Assets.xcassets */,
 				7B4C5A41224AC7F800E32C8C /* LaunchScreen.storyboard */,
 				7B4C5A44224AC7F800E32C8C /* Info.plist */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B4C5A4D224AE63E00E32C8C /* AlarmViewController.swift in Sources */,
+				7B4C5A54224C3C4400E32C8C /* Helper.swift in Sources */,
 				7B4C5A4B224AE60A00E32C8C /* GroupViewController.swift in Sources */,
 				7B4C5A3B224AC7F700E32C8C /* ViewController.swift in Sources */,
 				7B4C5A4F224AEFED00E32C8C /* Group.swift in Sources */,
