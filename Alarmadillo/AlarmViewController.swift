@@ -109,7 +109,7 @@ class AlarmViewController: UITableViewController, UITextFieldDelegate, UIImagePi
     
     //Means "post the command 'save' to the rest of the app", and any part that wants to be notified
     @objc func save() {
-        NotificationCenter.default.post(name: NSNotification.Name("save"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("save"), object: nil)
     }
     
     
