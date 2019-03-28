@@ -41,6 +41,8 @@ class AlarmViewController: UITableViewController, UITextFieldDelegate, UIImagePi
         alarm.name = name.text!
         alarm.caption = caption.text!
         title = alarm.name
+        
+        save()
     }
     
     //Get rid of keyboard
@@ -52,6 +54,8 @@ class AlarmViewController: UITableViewController, UITextFieldDelegate, UIImagePi
     //Set alarm's time
     @IBAction func datePickerChanged(_ sender: Any) {
         alarm.time = datePicker.date
+        
+        save()
     }
     
     //Allow user to pick image when tap gesture recognizer is triggered
@@ -91,6 +95,7 @@ class AlarmViewController: UITableViewController, UITextFieldDelegate, UIImagePi
             let newPath = Helper.getDocumentsDirectory().appendingPathComponent(alarm.image)
             let jpeg = image.jpegData(compressionQuality: 0.8)
             try jpeg?.write(to: newPath)
+            save()
         } catch {
             print("Failed to save new image")
         }
@@ -100,4 +105,12 @@ class AlarmViewController: UITableViewController, UITextFieldDelegate, UIImagePi
         tapToSelectImage.isHidden = true
     }
 
+    //MARK: - Saving
+    
+    //Means "post the command 'save' to the rest of the app", and any part that wants to be notified
+    @objc func save() {
+        NotificationCenter.default.post(name: NSNotification.Name("save"), object: nil)
+    }
+    
+    
 }

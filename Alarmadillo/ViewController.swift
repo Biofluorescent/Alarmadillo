@@ -24,13 +24,14 @@ class ViewController: UITableViewController {
         //Sets up back button that says Groups
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Groups", style: .plain, target: nil, action: nil)
         
-        groups.append(Group(name: "Enabled Group", playSound: true, enabled: true, alarms: []))
-        groups.append(Group(name: "Disabled Group", playSound: true, enabled: false, alarms: []))
-    }
+        //Save notification that gets posted from Alarm and Group View Controllers
+        NotificationCenter.default.addObserver(self, selector: #selector(save), name: Notification.Name("save"), object: nil)
+        
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        load()
     }
 
     //MARL: - Tableview functions
@@ -47,6 +48,8 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         groups.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+        save()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,6 +84,8 @@ class ViewController: UITableViewController {
         groups.append(newGroup)
         
         performSegue(withIdentifier: "EditGroup", sender: newGroup)
+        
+        save()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -100,6 +105,31 @@ class ViewController: UITableViewController {
             //give it the group we decided above
             groupViewController.group = groupToEdit
         }
+    }
+    
+    
+    //MARK: - Saving/Loading
+    
+    @objc func save() {
+        do {
+            let path = Helper.getDocumentsDirectory().appendingPathComponent("groups")
+            let data = try NSKeyedArchiver.archivedData(withRootObject: groups, requiringSecureCoding: false)
+            try data.write(to: path)
+        } catch {
+            print("Failed to save")
+        }
+    }
+    
+    func load() {
+        do {
+            let path = Helper.getDocumentsDirectory().appendingPathComponent("groups")
+            let data = try Data(contentsOf: path)
+            groups = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Group] ?? [Group]()
+        } catch {
+            print("Failed to load")
+        }
+        
+        tableView.reloadData()
     }
     
 }

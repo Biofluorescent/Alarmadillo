@@ -33,6 +33,8 @@ class GroupViewController: UITableViewController, UITextFieldDelegate {
         }else {
             group.enabled = sender.isOn
         }
+        
+        save()
     }
     
     //MARK: - Tableview methods
@@ -70,6 +72,8 @@ class GroupViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         group.alarms.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+        save()
     }
     
     
@@ -150,6 +154,8 @@ class GroupViewController: UITableViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         group.name = textField.text!
         title = group.name
+        
+        save()
     }
     
     //Want keyboard to go away when user taps "Done"
@@ -166,6 +172,8 @@ class GroupViewController: UITableViewController, UITextFieldDelegate {
         group.alarms.append(newAlarm)
         
         performSegue(withIdentifier: "EditAlarm", sender: newAlarm)
+        
+        save()
     }
     
     //Pass slected Alarm onto AlarmViewController
@@ -182,6 +190,14 @@ class GroupViewController: UITableViewController, UITextFieldDelegate {
         if let alarmViewController = segue.destination as? AlarmViewController {
             alarmViewController.alarm = alarmToEdit
         }
+    }
+    
+    
+    //MARK: - Saving
+    
+    //Means "post the command 'save' to the rest of the app", and any part that wants to be notified
+    @objc func save() {
+        NotificationCenter.default.post(name: NSNotification.Name("save"), object: nil)
     }
     
 }
