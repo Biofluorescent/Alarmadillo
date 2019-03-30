@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications //Make sure to put in Appdelegate too
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, UNUserNotificationCenterDelegate {
 
     var groups = [Group]()
     
@@ -245,5 +245,12 @@ class ViewController: UITableViewController {
         }
     }
     
+    
+    //MARK: - Notifaction Delegate Methods
+    
+    //Only show message while app is running, no sound
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert])
+    }
 }
 
