@@ -27,7 +27,7 @@ class ViewController: UITableViewController, UNUserNotificationCenterDelegate {
         
         //Save notification that gets posted from Alarm and Group View Controllers
         NotificationCenter.default.addObserver(self, selector: #selector(save), name: Notification.Name("save"), object: nil)
-        
+                
         }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -250,7 +250,103 @@ class ViewController: UITableViewController, UNUserNotificationCenterDelegate {
     
     //Only show message while app is running, no sound
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert])
+        completionHandler([.alert, .sound])
     }
+    
+    
+    //Triggered when user acts on a notification, up to us to do something with it
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        //pull out userInfo dictionary
+        let userInfo = response.notification.request.content.userInfo
+        
+        if let groupID = userInfo["group"] as? String {
+            //Now have groupID
+            switch response.actionIdentifier {
+                
+            //user swiped to unlock
+            case UNNotificationDefaultActionIdentifier:
+                print("Default Identifier")
+                
+            //user dismissed the alert
+            case UNNotificationDismissActionIdentifier:
+                print("Dismiss Identifier")
+                
+            //user asked to see the group
+            case "show":
+                display(group: groupID)
+                break
+                
+            //user asked to destroy the group
+            case "destroy":
+                destroy(group: groupID)
+                break
+                
+            //user asked to rename group, safely unwrap their text and rename
+            case "rename":
+                if let textResponse = response as? UNTextInputNotificationResponse {
+                    rename(group: groupID, newName: textResponse.userText)
+                }
+                break
+            default:
+                break
+            }
+        }
+        
+        //Need to call when done
+        completionHandler()
+    }
+    
+    
+    //To be triggered by display group action
+    func display(group groupID: String) {
+        _ = navigationController?.popToRootViewController(animated: false)
+        
+        //need to load data if app not running, else all data wiped clean
+        load()
+        
+        for group in groups {
+            if group.id == groupID {
+                performSegue(withIdentifier: "EditGroup", sender: group)
+                return
+            }
+        }
+    }
+    
+    //Triggered by Destroy Group action
+    func destroy(group groupID: String){
+        _ = navigationController?.popToRootViewController(animated: false)
+        
+        //Need to load data if app is not running, else all data wiped clean
+        load()
+        
+        for (index, group) in groups.enumerated() {
+            if group.id == groupID {
+                groups.remove(at: index)
+                break
+            }
+        }
+        
+        save()
+        load()
+    }
+    
+    //Triggered by Rename action
+    func rename(group groupID: String, newName: String){
+        _ = navigationController?.popToRootViewController(animated: false)
+        
+        //Need to load data if app is not running, else all data wiped clean
+        load()
+        
+        for group in groups {
+            if group.id == groupID {
+                group.name = newName
+                break
+            }
+        }
+        
+        save()
+        load()
+    }
+    
 }
 

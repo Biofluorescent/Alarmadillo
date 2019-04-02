@@ -29,15 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //create three actions for our alert
         let show = UNNotificationAction(identifier: "show", title: "Show Group", options: .foreground)
-        let destroy = UNNotificationAction(identifier: "destroy", title: "Desrtoy Group", options: [.destructive, .authenticationRequired])
-        let rename = UNTextInputNotificationAction(identifier: "Rename", title: "Rename Group", options: [], textInputButtonTitle: "Rename", textInputPlaceholder: "Type the new name here")
+        let destroy = UNNotificationAction(identifier: "destroy", title: "Destroy Group", options: [.destructive, .authenticationRequired])
+        let rename = UNTextInputNotificationAction(identifier: "rename", title: "Rename Group", options: [], textInputButtonTitle: "Rename", textInputPlaceholder: "Type the new name here")
         
         //wrap actions inside a category
-        let category = UNNotificationCategory(identifier: "alarm", actions: [show, destroy, rename], intentIdentifiers: [], options: [.customDismissAction])
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show, rename, destroy], intentIdentifiers: [], options: [.customDismissAction])
         
         //register category with the system
         center.setNotificationCategories([category])
-        
+
         return true
     }
 
